@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свяжитесь с нами</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://web-static.cdn.boltgaming.io/store/nightmare_1729768887182/bg-nightmare-v2.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            margin: 20px 0;
+        }
+
+        .logo {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        .promo-button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: rgba(255, 68, 68, 0.9);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .promo-button:hover {
+            background-color: rgba(255, 68, 68, 1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 160px;
+            height: 160px;
+            margin: 0 30px;
+            cursor: pointer;
+            object-fit: contain;
+        }
+
+        footer {
+            margin-top: 20px;
+            background-color: transparent;
+            color: rgba(128, 128, 128, 0.7);
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: rgba(128, 128, 128, 0.7);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://web-static.cdn.boltgaming.io/store/nightmare_1729768887182/logo-nightmare.png" alt="Логотип" class="logo">
+    </header>
+
+    <main>
+        <h1>Для получения ПРОМОКОДА нажмите кнопку ниже</h1>
+        <button class="promo-button" id="getPromoCodeButton">ПОЛУЧИТЬ ПРОМОКОД</button>
+    </main>
+
+    <div class="modal" id="promoModal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Свяжитесь с нами</h2>
+            <div class="icon-container">
+                <a href="https://t.me/sup_standoff2" target="_blank">
+                    <img src="https://static.insales-cdn.com/files/1/526/34144782/original/телега_1711971983493-1711971987606.png" alt="Telegram" class="icon">
+                </a>
+                <a href="https://wa.me/+77752741048" target="_blank">
+                    <img src="https://prod-msk-leadgen-minio.uiscom.ru/leadgen/widgets/images/100390/447222/1716061309_10516.png" alt="WhatsApp" class="icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="https://axlebolt.com" target="_blank">Публичная оферта</a>
+            |
+            <a href="https://store.standoff2.com/ru/privacy-policy" target="_blank">Политика конфиденциальности</a>
+        </div>
+        <div class="version-text">v0.30.7.77cb33a2</div>
+        <div>This site is protected by reCAPTCHA and <br> the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</div>
+    </footer>
+
+    <script>
+        const getPromoCodeButton = document.getElementById('getPromoCodeButton');
+        const promoModal = document.getElementById('promoModal');
+        const closeModal = document.getElementById('closeModal');
+
+        getPromoCodeButton.onclick = function() {
+            promoModal.style.display = 'flex';
+        }
+
+        closeModal.onclick = function() {
+            promoModal.style.display = 'none';
+        }
+
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            if (event.target === promoModal) {
+                promoModal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
