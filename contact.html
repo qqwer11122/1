@@ -3,167 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свяжитесь с нами</title>
-    <style>
-        body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://web-static.cdn.boltgaming.io/store/nightmare_1729768887182/bg-nightmare-v2.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-        }
-
-        header {
-            margin: 20px 0;
-        }
-
-        .logo {
-            max-width: 250px;
-            width: 100%;
-            height: auto;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-top: 50px;
-        }
-
-        .promo-button {
-            display: inline-block;
-            padding: 20px 40px;
-            font-size: 24px;
-            color: white;
-            background-color: rgba(255, 68, 68, 0.9);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 20px auto;
-            transition: background-color 0.3s ease;
-        }
-
-        .promo-button:hover {
-            background-color: rgba(255, 68, 68, 1);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background-color: #222;
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .icon {
-            width: 160px;
-            height: 160px;
-            margin: 0 30px;
-            cursor: pointer;
-            object-fit: contain;
-        }
-
-        footer {
-            margin-top: 20px;
-            background-color: transparent;
-            color: rgba(128, 128, 128, 0.7);
-            padding: 10px 0;
-        }
-
-        footer a {
-            color: rgba(128, 128, 128, 0.7);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>1С: современный лендинг</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="https://web-static.cdn.boltgaming.io/store/nightmare_1729768887182/logo-nightmare.png" alt="Логотип" class="logo">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header class="hero" id="top">
+        <nav class="nav">
+            <a class="brand" href="#top">1C.PRO</a>
+            <div class="nav-links">
+                <a href="#about">О платформе</a>
+                <a href="#skills">Навыки</a>
+                <a href="#cases">Кейсы</a>
+                <a href="#roadmap">План</a>
+            </div>
+            <button class="btn btn-outline" data-open-modal>Получить консультацию</button>
+        </nav>
+
+        <div class="hero-content container reveal">
+            <p class="tag">Профессия и технологии</p>
+            <h1>Программирование на 1С: с нуля до первого проекта</h1>
+            <p class="subtitle">Новый лендинг с интерактивом: реальные задачи 1С-разработчика, план входа в профессию и готовые точки старта.</p>
+            <div class="hero-actions">
+                <a href="#roadmap" class="btn btn-primary pulse">Стартовать обучение</a>
+                <a href="#cases" class="btn btn-glass">Смотреть кейсы</a>
+                <button class="btn btn-glass" data-open-modal>Оставить заявку</button>
+            </div>
+            <div class="hero-stats">
+                <div><strong>1000+</strong><span>вакансий по РФ/СНГ</span></div>
+                <div><strong>2–3 мес</strong><span>до первого pet-проекта</span></div>
+                <div><strong>5 ключевых тем</strong><span>для уверенного старта</span></div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <h1>Для получения ПРОМОКОДА нажмите кнопку ниже</h1>
-        <button class="promo-button" id="getPromoCodeButton">ПОЛУЧИТЬ ПРОМОКОД</button>
+        <section class="section container reveal" id="about">
+            <h2>Почему 1С — это сильная карьера</h2>
+            <div class="grid two-col">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80" alt="Автоматизация процессов" loading="lazy">
+                    <div class="card-body">
+                        <h3>Автоматизация бизнеса</h3>
+                        <p>1С внедряют в бухгалтерии, продажах, складе, производстве и HR. Результат работы разработчика — осязаемый эффект для бизнеса.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Аналитика и отчёты" loading="lazy">
+                    <div class="card-body">
+                        <h3>Спрос и рост</h3>
+                        <p>Рынку нужны разработчики, которые умеют не только писать код, но и понимать учетные процессы, интеграции и производительность.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-accent reveal" id="skills">
+            <div class="container">
+                <h2>Какие навыки качать в первую очередь</h2>
+                <div class="tabs">
+                    <button class="tab active" data-tab="tab1">Язык 1С</button>
+                    <button class="tab" data-tab="tab2">Запросы и регистры</button>
+                    <button class="tab" data-tab="tab3">Интеграции</button>
+                </div>
+                <div class="tab-panels">
+                    <article class="tab-panel active" id="tab1">
+                        <h3>Встроенный язык 1С</h3>
+                        <p>Модули, события форм, клиент-серверный контекст, общий код, расширения конфигурации.</p>
+                        <a href="https://v8.1c.ru/platforma/vstroennyy-yazyk/" target="_blank" rel="noopener noreferrer" class="btn btn-glass">Материалы</a>
+                    </article>
+                    <article class="tab-panel" id="tab2">
+                        <h3>Запросы, регистры, производительность</h3>
+                        <p>Оптимизация выборок, движения документов, контроль блокировок и ускорение тяжелых отчетов.</p>
+                        <a href="https://its.1c.ru/" target="_blank" rel="noopener noreferrer" class="btn btn-glass">Почитать ITS</a>
+                    </article>
+                    <article class="tab-panel" id="tab3">
+                        <h3>API и обмен данными</h3>
+                        <p>REST/HTTP, XML/JSON, обмены с CRM, банками и внешними сервисами.</p>
+                        <a href="https://v8.1c.ru/tekhnologii/integratsiya-s-drugimi-sistemami/" target="_blank" rel="noopener noreferrer" class="btn btn-glass">Технологии интеграции</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container reveal" id="cases">
+            <h2>Реальные кейсы, которые делает 1С-разработчик</h2>
+            <div class="grid three-col">
+                <article class="feature hover-lift">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Отчеты" loading="lazy">
+                    <h3>Отчеты для руководства</h3>
+                    <p>Создание аналитики по продажам, марже, оборачиваемости и план/факт показателям.</p>
+                </article>
+                <article class="feature hover-lift">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Команда внедрения" loading="lazy">
+                    <h3>Доработка типовых решений</h3>
+                    <p>Изменение процессов документов, печатных форм, ролей и бизнес-правил под компанию.</p>
+                </article>
+                <article class="feature hover-lift">
+                    <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=900&q=80" alt="Интеграция" loading="lazy">
+                    <h3>Интеграции</h3>
+                    <p>Обмен с сайтом, CRM и внешними API, чтобы данные обновлялись автоматически и без ручного труда.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container reveal" id="roadmap">
+            <h2>Roadmap: 5 шагов до уверенного старта</h2>
+            <ol class="timeline">
+                <li><span>1</span>Понять архитектуру платформы и объекты конфигурации.</li>
+                <li><span>2</span>Освоить язык 1С: процедуры, функции, формы.</li>
+                <li><span>3</span>Научиться работать с запросами и регистрами.</li>
+                <li><span>4</span>Сделать mini-project: документ + движения + отчет.</li>
+                <li><span>5</span>Подключить интеграцию и оптимизировать производительность.</li>
+            </ol>
+            <div class="hero-actions roadmap-actions">
+                <button class="btn btn-primary" data-open-modal>Получить личный план</button>
+                <a href="#top" class="btn btn-glass">Вернуться наверх</a>
+            </div>
+        </section>
     </main>
 
-    <div class="modal" id="promoModal">
-        <div class="modal-content">
-            <span class="close-button" id="closeModal">&times;</span>
-            <h2>Свяжитесь с нами</h2>
-            <div class="icon-container">
-                <a href="https://t.me/sup_standoff2" target="_blank">
-                    <img src="https://static.insales-cdn.com/files/1/526/34144782/original/телега_1711971983493-1711971987606.png" alt="Telegram" class="icon">
-                </a>
-                <a href="https://wa.me/+77752741048" target="_blank">
-                    <img src="https://prod-msk-leadgen-minio.uiscom.ru/leadgen/widgets/images/100390/447222/1716061309_10516.png" alt="WhatsApp" class="icon">
-                </a>
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div>
+                <h3>Хочешь быстро войти в 1С?</h3>
+                <p>Нажми кнопку, и я отправлю пошаговый план обучения и список практических задач.</p>
             </div>
+            <div class="contact-actions">
+                <button class="btn btn-primary" data-open-modal>Оставить заявку</button>
+                <a href="https://v8.1c.ru/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Открыть 1С:Платформа</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="to-top" aria-label="Наверх">↑</button>
+
+    <div class="modal" id="leadModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">×</button>
+            <h3>Заявка на консультацию</h3>
+            <p>Кликни по кнопке ниже — и откроется почта для быстрой связи.</p>
+            <a class="btn btn-primary" href="mailto:hello@1cpro.local?subject=Консультация%20по%201С">Написать на почту</a>
         </div>
     </div>
 
-    <footer>
-        <div>
-            <a href="https://axlebolt.com" target="_blank">Публичная оферта</a>
-            |
-            <a href="https://store.standoff2.com/ru/privacy-policy" target="_blank">Политика конфиденциальности</a>
-        </div>
-        <div class="version-text">v0.30.7.77cb33a2</div>
-        <div>This site is protected by reCAPTCHA and <br> the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</div>
-    </footer>
-
-    <script>
-        const getPromoCodeButton = document.getElementById('getPromoCodeButton');
-        const promoModal = document.getElementById('promoModal');
-        const closeModal = document.getElementById('closeModal');
-
-        getPromoCodeButton.onclick = function() {
-            promoModal.style.display = 'flex';
-        }
-
-        closeModal.onclick = function() {
-            promoModal.style.display = 'none';
-        }
-
-        // Закрытие модального окна при клике вне его
-        window.onclick = function(event) {
-            if (event.target === promoModal) {
-                promoModal.style.display = 'none';
-            }
-        }
-    </script>
+    <script src="a.js"></script>
 </body>
 </html>
