@@ -1,49 +1,77 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Пример: анимация при загрузке страницы
-    const sections = document.querySelectorAll("section");
-    sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = "translateY(20px)";
-        section.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.tab-panel');
+    const modal = document.getElementById('leadModal');
+    const openModalButtons = document.querySelectorAll('[data-open-modal]');
+    const closeModalButton = document.querySelector('.modal-close');
+    const toTopButton = document.querySelector('.to-top');
 
-    // Функция для появления секций при прокрутке
-    const appearOnScroll = () => {
-        const triggerBottom = window.innerHeight * 0.8;
-
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-
-            if (sectionTop < triggerBottom) {
-                section.style.opacity = 1;
-                section.style.transform = "translateY(0)";
+    const revealOnScroll = () => {
+        const triggerLine = window.innerHeight * 0.85;
+        revealElements.forEach((element) => {
+            if (element.getBoundingClientRect().top < triggerLine) {
+                element.classList.add('visible');
             }
         });
     };
 
-    // Инициализация анимации при загрузке
-    appearOnScroll();
-    
-    // Добавляем обработчик прокрутки
-    window.addEventListener("scroll", appearOnScroll);
-
-    // Пример: анимация при наведении на ссылки
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-        link.addEventListener("mouseenter", function() {
-            this.style.transform = "scale(1.1)";
-            this.style.transition = "transform 0.3s ease";
+    const setActiveNav = () => {
+        let currentId = '';
+        navLinks.forEach((link) => {
+            const section = document.querySelector(link.getAttribute('href'));
+            if (section && section.getBoundingClientRect().top <= 140) {
+                currentId = `#${section.id}`;
+            }
         });
 
-        link.addEventListener("mouseleave", function() {
-            this.style.transform = "scale(1)";
+        navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === currentId);
+        });
+    };
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+            tabs.forEach((item) => item.classList.remove('active'));
+            panels.forEach((panel) => panel.classList.remove('active'));
+            tab.classList.add('active');
+            const activePanel = document.getElementById(target);
+            if (activePanel) {
+                activePanel.classList.add('active');
+            }
         });
     });
 
-    // Пример: alert при переходе по ссылке
-    navLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            alert("Переход к разделу: " + this.textContent);
-        });
+    const openModal = () => {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+    };
+
+    openModalButtons.forEach((button) => button.addEventListener('click', openModal));
+    closeModalButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
     });
+
+    toTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+        revealOnScroll();
+        setActiveNav();
+        toTopButton.classList.toggle('show', window.scrollY > 420);
+    });
+
+    revealOnScroll();
+    setActiveNav();
 });
